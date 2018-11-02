@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --mode development\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode production"
+    "start": "webpack-dev-server --env development",
+    "build": "webpack --env production",
+
+    // "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --mode development\"",
+    // "test": "echo \"Error: no test specified\" && exit 1",
+    // "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "",
