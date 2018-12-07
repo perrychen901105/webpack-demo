@@ -23,10 +23,19 @@ const developmentConfig = merge([
   }),
 ]);
 
-module.exports = mode => {
-  if (mode === "production") {
-    return merge(commonConfig, productionConfig, { mode });
-  }
+// module.exports = mode => {
+//   if (mode === "production") {
+//     return merge(commonConfig, productionConfig, { mode });
+//   }
 
-  return merge(commonConfig, developmentConfig, { mode });
+//   return merge(commonConfig, developmentConfig, { mode });
+// };
+
+module.exports = {
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: "Webpack demo",
+    }),
+  ],
 };
+
