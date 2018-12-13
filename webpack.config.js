@@ -23,19 +23,37 @@ const developmentConfig = merge([
   }),
 ]);
 
-// module.exports = mode => {
-//   if (mode === "production") {
-//     return merge(commonConfig, productionConfig, { mode });
-//   }
+module.exports = mode => {
+  if (mode === "production") {
+    return merge(commonConfig, productionConfig, { mode });
+  }
 
-//   return merge(commonConfig, developmentConfig, { mode });
+  return merge(commonConfig, developmentConfig, { mode });
+};
+
+// module.exports = {
+//   plugins: [
+//     new HtmlWebpackPlugin({
+//       title: "Webpack demo",
+//     }),
+//   ],
 // };
 
-module.exports = {
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: "Webpack demo",
-    }),
-  ],
-};
+// module.exports = {
+//   devServer: {
+//     overlay: true,
+//         // Parse host and port from env to allow customization.
+//       //
+//       // If you use Docker, Vagrant or Cloud9, set
+//       // host: options.host || "0.0.0.0";
+//       //
+//       // 0.0.0.0 is available to all network devices
+//       // unlike default `localhost`.
+//     stats: "errors-only",
+//     host: process.env.HOST,
+//     port: process.env.PORT,
+//     open: true, // open the page in browser
+//   },
+
+// }
 
